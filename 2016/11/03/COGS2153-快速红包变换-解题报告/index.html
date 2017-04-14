@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+    <!-- 
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.3.0 -->
+
+    <!-- Title -->
+    
+    <title>
+        
+            COGS2153. 快速红包变换 - 解题报告 | 
+        
+        Tabing
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicons.png">
+    <link rel="icon" sizes="192x192" href="/img/favicons.png">
+    <link rel="apple-touch-icon" href="/img/favicons.png">
+
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Tabing">
+    <meta name="description" content="null">
+    <meta name="keywords" content="null,OI">
+
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Tabing">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://blog.ltmcpe.cn">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="COGS2153. 快速红包变换 - 解题报告 | Tabing">
+    <meta property="og:description" content="null">
+    <meta property="og:article:tag" content="OI"> 
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/css/material.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/queue.js"></script>
+
+    <!-- UC Browser Compatible -->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write("<link rel=\"stylesheet\" href=\"/css/uc.css\">");
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
+
+    
+
+    
+
+    <!-- Bing Background -->
+    
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#题目"><span class="post-toc-number">1.</span> <span class="post-toc-text">题目</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#题目描述"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">题目描述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#输入格式"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">输入格式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#输出格式"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">输出格式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#样例"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">样例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#样例输入1"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">样例输入1</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#样例输出1"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">样例输出1</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#样例输入2"><span class="post-toc-number">1.4.3.</span> <span class="post-toc-text">样例输入2</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#样例输出2"><span class="post-toc-number">1.4.4.</span> <span class="post-toc-text">样例输出2</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#提示"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">提示</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#来源"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">来源</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#代码"><span class="post-toc-number">2.</span> <span class="post-toc-text">代码</span></a></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                COGS2153. 快速红包变换 - 解题报告
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Tabing</strong>
+        <span>11月 03, 2016</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/OI/">OI</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Tabing&title=COGS2153. 快速红包变换 - 解题报告&summary=null&pics=https://blog.ltmcpe.cn/img/favicons.png&url=https://blog.ltmcpe.cn/2016/11/03/COGS2153-快速红包变换-解题报告/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a><a href="http://218.28.19.228/cogs/problem/problem.php?pid=2153" target="_blank" rel="external">题目</a></h1><p>2153.快速红包变换<br>★★★★   输入文件：redbag.in   输出文件：redbag.out   简单对比<br>时间限制：1 s   内存限制：256 MB  </p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>春节，又是一年一度发红包的时节。<br>这天晚上，小O睡的正香，她梦见在NOI上拿了金牌，过不了多久，保送清华，进入计算机系，打入ACM，赢取金奖，走上人生巅峰，想想还有点小激动。<br>这时，残暴的笑声吵醒了小O。<br>“哈哈！愚蠢的人类！这种纸质的红包早就不能镇压本座了！哈哈！”<br>“看你一脸懵逼，没错，本座就是‘祟’！愚蠢的人类！用红包镇压了本座千百年！如今！QQ微信红包当世，人类寄托在压岁钱里的信念已经冲淡了！这，正是本座重现大地的契机！哈哈！”<br>“人类，你是本座遇到的第一个人！你来和本座玩个游戏吧！恩，就用这可恶的红包吧！哈哈！”<br>“本座，在这里放一些红包，然后！对里面的钱数做一些变换，你，要回答本座的问题，明白的了吗！哈哈！”  </p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第一行，一个数N，表示红包的数量<br>第二行，N个数，表示红包A[1]，A[2]……A[N]初始的钱数<br>第三行，一个数M，表示变换和询问的个数和<br>第4~3+M行，每行包含一条命令令，和命令的具体细节。<br>命令如下：<br>Cadd    l r a    (add 从A[l]到A[r]每个红包钱数加a)<br>Cchange    l r a    (change 从A[l]到A[r]每个红包钱数变为a)<br>Cbmax    l r a    (be max 从A[l]到A[r]每个红包钱数变为max(A[i],a))<br>Cbmin    l r a    (be min 从A[l]到A[r]每个红包钱数变为min(A[i],a))<br>Qsum    l r    (sum 求从A[l]到A[r]每个红包钱数和)<br>Qwmax    l r    (what is max 从A[l]到A[r]每个红包钱数的最大值)<br>Qwmin    l r    (what is min 从A[l]到A[r]每个红包钱数的最小值)<br>Qnmax    l r    (number of max 从A[l]到A[r]每个红包钱数的最大值的个数)<br>Qnmin    l r    (number of min 从A[l]到A[r]每个红包钱数的最小值的个数)  </p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>针对每个询问，输出结果，每行一个。  </p>
+<h2 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h2><h3 id="样例输入1"><a href="#样例输入1" class="headerlink" title="样例输入1"></a>样例输入1</h3><p>10<br>4 8 4 7 2 2 5 2 9 8<br>10<br>Qsum 1 6<br>Qsum 3 4<br>Cadd 3 4 8<br>Cadd 5 6 6<br>Qsum 6 9<br>Cadd 7 8 4<br>Qsum 8 8<br>Cadd 7 8 8<br>Cadd 2 5 2<br>Cadd 7 10 1  </p>
+<h3 id="样例输出1"><a href="#样例输出1" class="headerlink" title="样例输出1"></a>样例输出1</h3><p>27<br>11<br>24<br>6  </p>
+<h3 id="样例输入2"><a href="#样例输入2" class="headerlink" title="样例输入2"></a>样例输入2</h3><p>10<br>7 4 4 0 8 1 1 9 3 3<br>10<br>Cbmin 2 10 3<br>Qsum 2 7<br>Cbmax 2 8 5<br>Cbmin 2 4 5<br>Qsum 9 10<br>Cadd 3 6 9<br>Cbmin 10 10 7<br>Qnmax 7 7<br>Qnmax 4 5<br>Cadd 4 9 2  </p>
+<h3 id="样例输出2"><a href="#样例输出2" class="headerlink" title="样例输出2"></a>样例输出2</h3><p>11<br>6<br>1<br>2 </p>
+<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><p>各组数据N，M取值，指令种类如下<br>10 10 Cadd Qsum<br>1000 1000 Cadd Cchange Qsum<br>100000 100000 Cadd Cchange Qsum<br>100000 100000 Cadd Cchange Qsum<br>100 100 全部<br>10000 10000 全部<br>10000 10000 全部<br>100000 100000 全部<br>100000 100000 全部<br>100000 100000 全部<br>题目中全部数据可用int保存  </p>
+<h2 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h2><p><a href="http://218.28.19.228/cogs/problem/problem.php?pid=2153" target="_blank" rel="external">COGS2153</a><br>UBWH  </p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p>最关键的东西在第140行的注释，这个点坑了我好长时间,,,  </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div><div class="line">238</div><div class="line">239</div><div class="line">240</div><div class="line">241</div><div class="line">242</div><div class="line">243</div><div class="line">244</div><div class="line">245</div><div class="line">246</div><div class="line">247</div><div class="line">248</div><div class="line">249</div><div class="line">250</div><div class="line">251</div><div class="line">252</div><div class="line">253</div><div class="line">254</div><div class="line">255</div><div class="line">256</div><div class="line">257</div><div class="line">258</div><div class="line">259</div><div class="line">260</div><div class="line">261</div><div class="line">262</div><div class="line">263</div><div class="line">264</div><div class="line">265</div><div class="line">266</div><div class="line">267</div><div class="line">268</div><div class="line">269</div><div class="line">270</div><div class="line">271</div><div class="line">272</div><div class="line">273</div><div class="line">274</div><div class="line">275</div><div class="line">276</div><div class="line">277</div><div class="line">278</div><div class="line">279</div><div class="line">280</div><div class="line">281</div><div class="line">282</div><div class="line">283</div><div class="line">284</div><div class="line">285</div><div class="line">286</div><div class="line">287</div><div class="line">288</div><div class="line">289</div><div class="line">290</div><div class="line">291</div><div class="line">292</div><div class="line">293</div><div class="line">294</div><div class="line">295</div><div class="line">296</div><div class="line">297</div><div class="line">298</div><div class="line">299</div><div class="line">300</div><div class="line">301</div><div class="line">302</div><div class="line">303</div><div class="line">304</div><div class="line">305</div><div class="line">306</div><div class="line">307</div><div class="line">308</div><div class="line">309</div><div class="line">310</div><div class="line">311</div><div class="line">312</div><div class="line">313</div><div class="line">314</div><div class="line">315</div><div class="line">316</div><div class="line">317</div><div class="line">318</div><div class="line">319</div><div class="line">320</div><div class="line">321</div><div class="line">322</div><div class="line">323</div><div class="line">324</div><div class="line">325</div><div class="line">326</div><div class="line">327</div><div class="line">328</div><div class="line">329</div><div class="line">330</div><div class="line">331</div><div class="line">332</div><div class="line">333</div><div class="line">334</div><div class="line">335</div><div class="line">336</div><div class="line">337</div><div class="line">338</div><div class="line">339</div><div class="line">340</div><div class="line">341</div><div class="line">342</div><div class="line">343</div><div class="line">344</div><div class="line">345</div><div class="line">346</div><div class="line">347</div><div class="line">348</div><div class="line">349</div><div class="line">350</div><div class="line">351</div><div class="line">352</div><div class="line">353</div><div class="line">354</div><div class="line">355</div><div class="line">356</div><div class="line">357</div><div class="line">358</div><div class="line">359</div><div class="line">360</div><div class="line">361</div><div class="line">362</div><div class="line">363</div><div class="line">364</div><div class="line">365</div><div class="line">366</div><div class="line">367</div><div class="line">368</div><div class="line">369</div><div class="line">370</div><div class="line">371</div><div class="line">372</div><div class="line">373</div><div class="line">374</div><div class="line">375</div><div class="line">376</div><div class="line">377</div><div class="line">378</div><div class="line">379</div><div class="line">380</div><div class="line">381</div><div class="line">382</div><div class="line">383</div><div class="line">384</div><div class="line">385</div><div class="line">386</div><div class="line">387</div><div class="line">388</div><div class="line">389</div><div class="line">390</div><div class="line">391</div><div class="line">392</div><div class="line">393</div><div class="line">394</div><div class="line">395</div><div class="line">396</div><div class="line">397</div><div class="line">398</div><div class="line">399</div><div class="line">400</div><div class="line">401</div><div class="line">402</div><div class="line">403</div><div class="line">404</div><div class="line">405</div><div class="line">406</div><div class="line">407</div><div class="line">408</div><div class="line">409</div><div class="line">410</div><div class="line">411</div><div class="line">412</div><div class="line">413</div><div class="line">414</div><div class="line">415</div><div class="line">416</div><div class="line">417</div><div class="line">418</div><div class="line">419</div><div class="line">420</div><div class="line">421</div><div class="line">422</div><div class="line">423</div><div class="line">424</div><div class="line">425</div><div class="line">426</div><div class="line">427</div><div class="line">428</div><div class="line">429</div><div class="line">430</div><div class="line">431</div><div class="line">432</div><div class="line">433</div><div class="line">434</div><div class="line">435</div><div class="line">436</div><div class="line">437</div><div class="line">438</div><div class="line">439</div><div class="line">440</div><div class="line">441</div><div class="line">442</div><div class="line">443</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">100000</span>+<span class="number">100</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">char</span> cmds[<span class="number">9</span>][<span class="number">20</span>] = &#123;<span class="string">"Cadd"</span>, <span class="string">"Cchange"</span>, <span class="string">"Cbmax"</span>, <span class="string">"Cbmin"</span>, <span class="string">"Qsum"</span>, <span class="string">"Qwmax"</span>, <span class="string">"Qwmin"</span>, <span class="string">"Qnmax"</span>, <span class="string">"Qnmin"</span>&#125;;</div><div class="line">FILE *fin, *fout;</div><div class="line"><span class="keyword">int</span> n, m, A[maxn];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123; <span class="keyword">return</span> a&lt;b?b:a; &#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">min</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123; <span class="keyword">return</span> a&lt;b?a:b; &#125;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Q_read</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> ans = <span class="number">0</span>;</div><div class="line">	<span class="keyword">char</span> c = <span class="number">0</span>;</div><div class="line">	<span class="keyword">while</span>(c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>) c = fgetc(fin);</div><div class="line">	<span class="keyword">while</span>(c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>) &#123;</div><div class="line">		ans *= <span class="number">10</span>;</div><div class="line">		ans += c-<span class="string">'0'</span>;</div><div class="line">		c = fgetc(fin);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Q_write</span><span class="params">(<span class="keyword">int</span> a)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> tmp = a, now = <span class="number">5</span>;</div><div class="line">	<span class="keyword">int</span> buf[<span class="number">6</span>];</div><div class="line">	<span class="keyword">while</span>(tmp &gt; <span class="number">0</span>) &#123;</div><div class="line">		buf[now] = tmp%<span class="number">10</span>;</div><div class="line">		now--;</div><div class="line">		tmp /= <span class="number">10</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = now+<span class="number">1</span>; i &lt;= <span class="number">5</span>; i++) fputc(buf[i]+<span class="string">'0'</span>, fout); </div><div class="line">&#125;</div><div class="line"><span class="keyword">struct</span> SEG &#123;</div><div class="line">	<span class="keyword">int</span> n;</div><div class="line">	<span class="keyword">int</span> maxv[<span class="number">4</span>*maxn], minv[<span class="number">4</span>*maxn], sumv[<span class="number">4</span>*maxn];</div><div class="line">	<span class="keyword">int</span> nmax[<span class="number">4</span>*maxn], nmin[<span class="number">4</span>*maxn];</div><div class="line">	<span class="keyword">int</span> addv[<span class="number">4</span>*maxn], setv[<span class="number">4</span>*maxn];</div><div class="line">	SEG(<span class="keyword">int</span> n) &#123;</div><div class="line">		<span class="keyword">this</span>-&gt;n = n;</div><div class="line">		<span class="keyword">this</span>-&gt;build(<span class="number">1</span>, <span class="number">1</span>, n);</div><div class="line">	&#125; </div><div class="line">	<span class="keyword">int</span> oL, oR;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">upcurpinfo</span><span class="params">(<span class="keyword">int</span> o, <span class="keyword">int</span> L, <span class="keyword">int</span> R)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> lc = o*<span class="number">2</span>, rc = o*<span class="number">2</span>+<span class="number">1</span>;</div><div class="line">		<span class="keyword">if</span>(setv[o] != INF) &#123;</div><div class="line">			minv[o] = maxv[o] = setv[o];</div><div class="line">			sumv[o] = setv[o]*(R-L+<span class="number">1</span>);</div><div class="line">			nmax[o] = nmin[o] = R-L+<span class="number">1</span>;</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			<span class="keyword">if</span>(L == R) &#123;</div><div class="line">				sumv[o] = minv[o] = maxv[o] = A[L];</div><div class="line">				nmax[o] = nmin[o] = <span class="number">1</span>;</div><div class="line">			&#125; <span class="keyword">else</span> &#123;</div><div class="line">				sumv[o] = sumv[lc] + sumv[rc];</div><div class="line">				<span class="comment">//处理maxv&amp;nmax </span></div><div class="line">				<span class="keyword">if</span>(maxv[lc] == maxv[rc]) &#123; maxv[o] = maxv[lc]; nmax[o] = nmax[lc] + nmax[rc]; &#125;</div><div class="line">				<span class="keyword">else</span> <span class="keyword">if</span>(maxv[lc] &gt; maxv[rc]) &#123; maxv[o] = maxv[lc]; nmax[o] = nmax[lc]; &#125;</div><div class="line">				<span class="keyword">else</span> &#123; maxv[o] = maxv[rc]; nmax[o] = nmax[rc]; &#125;</div><div class="line">				<span class="comment">//处理minv&amp;nmin</span></div><div class="line">				<span class="keyword">if</span>(minv[lc] == minv[rc]) &#123; minv[o] = minv[lc]; nmin[o] = nmin[lc] + nmin[rc]; &#125;</div><div class="line">				<span class="keyword">else</span> <span class="keyword">if</span>(minv[lc] &gt; minv[rc]) &#123; minv[o] = minv[rc]; nmin[o] = nmin[rc]; &#125;</div><div class="line">				<span class="keyword">else</span> &#123; minv[o] = minv[lc]; nmin[o] = nmin[lc]; &#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span>(addv[o]) &#123; minv[o] += addv[o]; maxv[o] += addv[o]; sumv[o] += addv[o]*(R-L+<span class="number">1</span>); &#125;	</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> o, <span class="keyword">int</span> L, <span class="keyword">int</span> R)</span> </span>&#123;</div><div class="line"><span class="comment">//		printf("build(o=%d, L=%d, R=%d) maxv=%d, minv=%d, sumv=%d, nmax=%d, nmin=%d, setv=%d, addv=%d\n", o, L, R, maxv[o], minv[o], sumv[o], nmax[o], nmin[o], setv[o], addv[o]);</span></div><div class="line">		setv[o] = INF; addv[o] = <span class="number">0</span>;</div><div class="line">		<span class="keyword">if</span>(L == R) &#123;</div><div class="line">			maxv[o] = minv[o] = sumv[o] = A[L];</div><div class="line">			nmax[o] = nmin[o] = <span class="number">1</span>;</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			<span class="keyword">int</span> lc = o*<span class="number">2</span>, rc =o*<span class="number">2</span>+<span class="number">1</span>;</div><div class="line">			<span class="keyword">int</span> M = L + (R-L)/<span class="number">2</span>;</div><div class="line">			build(lc, L, M);</div><div class="line">			build(rc, M+<span class="number">1</span>, R);</div><div class="line">			upcurpinfo(o, L, R);</div><div class="line">		&#125; </div><div class="line"><span class="comment">//		printf("build(o=%d, L=%d, R=%d) maxv=%d, minv=%d, sumv=%d, nmax=%d, nmin=%d, setv=%d, addv=%d\n", o, L, R, maxv[o], minv[o], sumv[o], nmax[o], nmin[o], setv[o], addv[o]);</span></div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">pushdown</span><span class="params">(<span class="keyword">int</span> o)</span> </span>&#123;<span class="comment">//pushdown之后需更新左右子节点 </span></div><div class="line">		<span class="keyword">int</span> lc = o*<span class="number">2</span>, rc = o*<span class="number">2</span>+<span class="number">1</span>;</div><div class="line">		<span class="keyword">if</span>(setv[o] != INF) &#123;</div><div class="line">			setv[lc] = setv[rc] = setv[o];</div><div class="line">			addv[lc] = addv[rc] = <span class="number">0</span>;</div><div class="line">			setv[o] = INF;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span>(addv[o]) &#123;</div><div class="line">			addv[lc] += addv[o];</div><div class="line">			addv[rc] += addv[o];</div><div class="line">			addv[o] = <span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> av;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> o, <span class="keyword">int</span> L, <span class="keyword">int</span> R)</span> </span>&#123;</div><div class="line">		<span class="keyword">if</span>(L&gt;=oL &amp;&amp; R&lt;=oR) &#123;</div><div class="line">			addv[o] += av;</div><div class="line"><span class="comment">//			printf("addv[o=%d] = av=%d, L=%d, R=%d, oL=%d, oR=%d\n", o, av, L, R, oL, oR);</span></div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			pushdown(o);</div><div class="line">			<span class="keyword">int</span> lc = o*<span class="number">2</span>, rc = o*<span class="number">2</span>+<span class="number">1</span>;</div><div class="line">			<span class="keyword">int</span> M = L + (R-L)/<span class="number">2</span>;</div><div class="line">			<span class="keyword">if</span>(M &gt;= oL) add(lc, L, M); <span class="keyword">else</span> upcurpinfo(lc, L, M);</div><div class="line">			<span class="keyword">if</span>(M &lt; oR) add(rc, M+<span class="number">1</span>, R); <span class="keyword">else</span> upcurpinfo(rc, M+<span class="number">1</span>, R);</div><div class="line">		&#125;</div><div class="line">		upcurpinfo(o, L, R);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> sv;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">set</span><span class="params">(<span class="keyword">int</span> o, <span class="keyword">int</span> L, <span class="keyword">int</span> R)</span> </span>&#123;</div><div class="line">		<span class="keyword">if</span>(L&gt;=oL &amp;&amp; R&lt;=oR) &#123;</div><div class="line">			setv[o] = sv; addv[o] = <span class="number">0</span>;</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line"><span class="comment">//			fprintf(fout, "set(o=%d, L=%d, R=%d),oL=%d, oR=%d, sv=%d, pushdown(o=%d)\n", o, L, R, oL, oR, sv, o);</span></div><div class="line">			pushdown(o);</div><div class="line">			<span class="keyword">int</span> lc = o*<span class="number">2</span>, rc = o*<span class="number">2</span>+<span class="number">1</span>;</div><div class="line">			<span class="keyword">int</span> M = L + (R-L)/<span class="number">2</span>;</div><div class="line">			<span class="keyword">if</span>(M &gt;= oL) <span class="built_in">set</span>(lc, L, M); <span class="keyword">else</span> upcurpinfo(lc, L, M);</div><div class="line">			<span class="keyword">if</span>(M &lt; oR) <span class="built_in">set</span>(rc, M+<span class="number">1</span>, R); <span class="keyword">else</span> upcurpinfo(rc, M+<span class="number">1</span>, R);</div><div class="line">		&#125;</div><div class="line">		upcurpinfo(o, L, R);</div><div class="line">	&#125;</div><div class="line">	<span class="comment">/*</span></div><div class="line">	int uv, p;</div><div class="line">	void update(int o, int L, int R) &#123;</div><div class="line">		int lc = o*2, rc = o*2+1;</div><div class="line">		if(L == R) &#123;</div><div class="line">			setv[o] = -1; addv[o] = 0;</div><div class="line">			maxv[o] = minv[o] = sumv[o] = uv;</div><div class="line">			return;</div><div class="line">		&#125; else &#123;</div><div class="line">			int M = L + (R-L)/2;</div><div class="line">			if(M &gt;= p) update(lc, L, M);</div><div class="line">			else update(rc, M+1, R);</div><div class="line">		&#125;</div><div class="line">		upcurpinfo(o, L ,R);</div><div class="line">	&#125;</div><div class="line">	*/</div><div class="line">	<span class="keyword">int</span> soL, soR, smaxv;</div><div class="line">	<span class="comment">//setmax/min操作需全部统计再修改 </span></div><div class="line">	<span class="keyword">struct</span> sd &#123;</div><div class="line">		<span class="keyword">int</span> L, R, sv;</div><div class="line">	&#125;;</div><div class="line">	<span class="built_in">vector</span>&lt;sd&gt; svinfo;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setmax</span><span class="params">(<span class="keyword">int</span> o, <span class="keyword">int</span> L, <span class="keyword">int</span> R, <span class="keyword">int</span> _add=<span class="number">0</span>)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> lc=o*<span class="number">2</span>, rc=o*<span class="number">2</span>+<span class="number">1</span>;</div><div class="line">		<span class="keyword">int</span> M = L + (R-L)/<span class="number">2</span>;</div><div class="line">		<span class="keyword">if</span>(setv[o] != INF) &#123;</div><div class="line">			<span class="keyword">if</span>(L&gt;=soL &amp;&amp; R&lt;=soR) &#123;</div><div class="line">				<span class="keyword">int</span> tmp = setv[o]+_add+addv[o];</div><div class="line">				<span class="keyword">if</span>(tmp &lt; smaxv) &#123;</div><div class="line">					<span class="comment">/*oL = L; oR = R; sv = smaxv;//-_add;//set操作已把所有add值pushdown</span></div><div class="line">					set(1, 1, n);*/</div><div class="line">					svinfo.push_back((sd)&#123;L, R, smaxv&#125;);</div><div class="line">				&#125;</div><div class="line">			&#125; <span class="keyword">else</span> &#123;</div><div class="line">				pushdown(o);</div><div class="line">				<span class="keyword">if</span>(M &gt;= soL) setmax(lc, L, M, _add+addv[o]); <span class="keyword">else</span> upcurpinfo(lc, L, M);</div><div class="line">				<span class="keyword">if</span>(M &lt; soR) setmax(rc, M+<span class="number">1</span>, R, _add+addv[o]); <span class="keyword">else</span> upcurpinfo(rc, M+<span class="number">1</span>, R);</div><div class="line">			&#125;</div><div class="line">			upcurpinfo(o, L, R);</div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="comment">/*if(L == R) &#123;//边界一:已经到达叶节点 </span></div><div class="line">			if(smaxv &gt; maxv[o]) &#123;</div><div class="line">				p = L;</div><div class="line">				uv = smaxv;</div><div class="line">				update(1, 1, n);</div><div class="line">			&#125;	</div><div class="line">		&#125; else </div><div class="line">		*/</div><div class="line">		<span class="keyword">if</span>(L&gt;=soL &amp;&amp; R&lt;=soR) &#123;<span class="comment">//边界二三需满足:操作区间完全包含当前区间 </span></div><div class="line">			<span class="keyword">if</span>(smaxv &gt;= maxv[o]+_add) &#123;<span class="comment">//边界二:当前区间的最大值小于等于smaxv,可直接把当前整个区间设置为smaxv </span></div><div class="line">				<span class="comment">/*oL = L; oR = R; sv = smaxv;</span></div><div class="line">				set(1, 1, n);*/</div><div class="line">				svinfo.push_back((sd)&#123;L, R, smaxv&#125;);</div><div class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span>(smaxv &lt;= minv[o]+_add) &#123;<span class="comment">//边界三:当前区间最小值大于等于smaxv,无需处理 </span></div><div class="line">				<span class="keyword">return</span>;</div><div class="line">			&#125; <span class="keyword">else</span> &#123;</div><div class="line">				<span class="keyword">if</span>(M &gt;= soL) setmax(lc, L, M, _add+addv[o]); <span class="keyword">else</span> upcurpinfo(lc, L, M);</div><div class="line">				<span class="keyword">if</span>(M &lt; soR) setmax(rc, M+<span class="number">1</span>, R, _add+addv[o]); <span class="keyword">else</span> upcurpinfo(rc, M+<span class="number">1</span>, R);</div><div class="line">			&#125;</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			<span class="keyword">if</span>(M &gt;= soL) setmax(lc, L, M, _add+addv[o]); <span class="keyword">else</span> upcurpinfo(lc, L, M);</div><div class="line">			<span class="keyword">if</span>(M &lt; soR) setmax(rc, M+<span class="number">1</span>, R, _add+addv[o]); <span class="keyword">else</span> upcurpinfo(rc, M+<span class="number">1</span>, R);</div><div class="line">		&#125;</div><div class="line">		upcurpinfo(o, L, R);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> sminv;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setmin</span><span class="params">(<span class="keyword">int</span> o, <span class="keyword">int</span> L, <span class="keyword">int</span> R, <span class="keyword">int</span> _add=<span class="number">0</span>)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> lc=o*<span class="number">2</span>, rc=o*<span class="number">2</span>+<span class="number">1</span>;</div><div class="line">		<span class="keyword">int</span> M = L + (R-L)/<span class="number">2</span>;</div><div class="line">		<span class="keyword">if</span>(setv[o] != INF) &#123;</div><div class="line">			<span class="keyword">if</span>(L&gt;=soL &amp;&amp; R&lt;=soR) &#123;</div><div class="line">				<span class="keyword">int</span> tmp = setv[o]+_add+addv[o];</div><div class="line">				<span class="keyword">if</span>(tmp &gt; sminv) &#123;</div><div class="line">					<span class="comment">/*oL = L; oR = R; sv = sminv;//-_add;//set操作已把所有add值pushdown</span></div><div class="line">					set(1, 1, n);*/</div><div class="line">					svinfo.push_back((sd)&#123;L, R, sminv&#125;);</div><div class="line">				&#125;</div><div class="line">			&#125; <span class="keyword">else</span> &#123;</div><div class="line"><span class="comment">//				printf("setmin(o=%d, L=%d, R=%d, _add=%d)-&gt;pushdown(o=%d, [L=%d, R=%d]), soL=%d, soR=%d\n", o, L, R, _add, o, L, R, soL, soR);</span></div><div class="line">				pushdown(o);</div><div class="line">				<span class="keyword">if</span>(M &gt;= soL) setmin(lc, L, M, _add+addv[o]); <span class="keyword">else</span> upcurpinfo(lc, L, M);</div><div class="line">				<span class="keyword">if</span>(M &lt; soR) setmin(rc, M+<span class="number">1</span>, R, _add+addv[o]); <span class="keyword">else</span> upcurpinfo(rc, M+<span class="number">1</span>, R);</div><div class="line">			&#125;</div><div class="line">			upcurpinfo(o, L, R);</div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="comment">/*if(L == R) &#123;</span></div><div class="line">			if(sminv &lt; minv[o]) &#123;</div><div class="line">				p = L;</div><div class="line">				uv = sminv;</div><div class="line">				update(1, 1, n);</div><div class="line">			&#125;</div><div class="line">		&#125; else*/</div><div class="line">		<span class="keyword">if</span>(L&gt;=soL &amp;&amp; R&lt;=soR) &#123;</div><div class="line">			<span class="keyword">if</span>(sminv &lt;= minv[o]+_add) &#123;</div><div class="line">				<span class="comment">/*oL = L; oR = R; sv = sminv;</span></div><div class="line">				set(1, 1, n);*/</div><div class="line">				svinfo.push_back((sd)&#123;L, R, sminv&#125;);</div><div class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span>(sminv &gt;= maxv[o]+_add) &#123;</div><div class="line">				<span class="keyword">return</span>;</div><div class="line">			&#125; <span class="keyword">else</span> &#123;</div><div class="line">				<span class="keyword">if</span>(M &gt;= soL) setmin(lc, L, M, _add+addv[o]); <span class="keyword">else</span> upcurpinfo(lc, L, M);</div><div class="line">				<span class="keyword">if</span>(M &lt; soR) setmin(rc, M+<span class="number">1</span>, R, _add+addv[o]); <span class="keyword">else</span> upcurpinfo(rc, M+<span class="number">1</span>, R);</div><div class="line">			&#125;</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			<span class="keyword">if</span>(M &gt;= soL) setmin(lc, L, M, _add+addv[o]); <span class="keyword">else</span> upcurpinfo(lc, L, M);</div><div class="line">			<span class="keyword">if</span>(M &lt; soR) setmin(rc, M+<span class="number">1</span>, R, _add+addv[o]); <span class="keyword">else</span> upcurpinfo(rc, M+<span class="number">1</span>, R);</div><div class="line">		&#125;</div><div class="line">		upcurpinfo(o, L, R);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> _sum;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">qsum</span><span class="params">(<span class="keyword">int</span> o, <span class="keyword">int</span> L, <span class="keyword">int</span> R, <span class="keyword">int</span> _add=<span class="number">0</span>)</span> </span>&#123;</div><div class="line">		<span class="keyword">if</span>(setv[o] != INF) &#123;</div><div class="line">			<span class="keyword">int</span> v = setv[o] + _add + addv[o];</div><div class="line">			_sum += v * (min(R, oR) - max(L, oL) + <span class="number">1</span>);</div><div class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(L&gt;=oL &amp;&amp; R&lt;=oR) &#123;</div><div class="line">			_sum += sumv[o] + _add * (R-L+<span class="number">1</span>);</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			<span class="keyword">int</span> lc = o*<span class="number">2</span>, rc = o*<span class="number">2</span>+<span class="number">1</span>;</div><div class="line">			<span class="keyword">int</span> M = L + (R-L)/<span class="number">2</span>;</div><div class="line">			<span class="keyword">if</span>(M &gt;= oL) qsum(lc, L, M, _add+addv[o]);</div><div class="line">			<span class="keyword">if</span>(M &lt; oR) qsum(rc, M+<span class="number">1</span>, R, _add+addv[o]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> _max;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">qmax</span><span class="params">(<span class="keyword">int</span> o, <span class="keyword">int</span> L, <span class="keyword">int</span> R, <span class="keyword">int</span> _add=<span class="number">0</span>)</span> </span>&#123;</div><div class="line">		<span class="keyword">if</span>(setv[o] != INF) &#123;</div><div class="line">			<span class="keyword">int</span> v = setv[o] + _add + addv[o];</div><div class="line">			_max = max(_max, v);</div><div class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(L&gt;=oL &amp;&amp; R&lt;=oR) &#123;</div><div class="line">			_max = max(_max, maxv[o]+_add);</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			<span class="keyword">int</span> lc=o*<span class="number">2</span>, rc=o*<span class="number">2</span>+<span class="number">1</span>;</div><div class="line">			<span class="keyword">int</span> M = L + (R-L)/<span class="number">2</span>;</div><div class="line">			<span class="keyword">if</span>(M &gt;= oL) qmax(lc, L, M, _add+addv[o]);</div><div class="line">			<span class="keyword">if</span>(M &lt; oR) qmax(rc, M+<span class="number">1</span>, R, _add+addv[o]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> _min;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">qmin</span><span class="params">(<span class="keyword">int</span> o, <span class="keyword">int</span> L, <span class="keyword">int</span> R, <span class="keyword">int</span> _add=<span class="number">0</span>)</span> </span>&#123;</div><div class="line">		<span class="keyword">if</span>(setv[o] != INF) &#123;</div><div class="line">			<span class="keyword">int</span> v = setv[o] + _add + addv[o];</div><div class="line">			_min = min(_min, v);</div><div class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(L&gt;=oL &amp;&amp; R&lt;=oR) &#123;</div><div class="line">			_min = min(_min, minv[o]+_add);</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			<span class="keyword">int</span> lc=o*<span class="number">2</span>, rc=o*<span class="number">2</span>+<span class="number">1</span>;</div><div class="line">			<span class="keyword">int</span> M = L + (R-L)/<span class="number">2</span>;</div><div class="line">			<span class="keyword">if</span>(M &gt;= oL) qmin(lc, L, M, _add+addv[o]);</div><div class="line">			<span class="keyword">if</span>(M &lt; oR) qmin(rc, M+<span class="number">1</span>, R, _add+addv[o]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> _nmax, _nowmax;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">qnmax</span><span class="params">(<span class="keyword">int</span> o, <span class="keyword">int</span> L, <span class="keyword">int</span> R, <span class="keyword">int</span> _add=<span class="number">0</span>)</span> </span>&#123;</div><div class="line">		<span class="keyword">if</span>(setv[o] != INF) &#123;</div><div class="line">			<span class="keyword">int</span> tmp = min(R, oR) - max(L, oL) + <span class="number">1</span>;</div><div class="line">			<span class="keyword">if</span>(_nowmax == setv[o]+_add+addv[o]) _nmax += tmp;</div><div class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(_nowmax &lt; setv[o]+_add+addv[o]) &#123; _nowmax = setv[o]+_add+addv[o]; _nmax = tmp; &#125;</div><div class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(L&gt;=oL &amp;&amp; R&lt;=oR) &#123;</div><div class="line">			<span class="keyword">if</span>(_nowmax == maxv[o]+_add) _nmax += nmax[o];</div><div class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(_nowmax &lt; maxv[o]+_add) &#123; _nowmax = maxv[o]+_add; _nmax = nmax[o]; &#125;</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			<span class="keyword">int</span> lc=o*<span class="number">2</span>, rc=o*<span class="number">2</span>+<span class="number">1</span>;</div><div class="line">			<span class="keyword">int</span> M = L + (R-L)/<span class="number">2</span>;</div><div class="line">			<span class="keyword">if</span>(M &gt;= oL) qnmax(lc, L, M, _add+addv[o]);</div><div class="line">			<span class="keyword">if</span>(M &lt; oR) qnmax(rc, M+<span class="number">1</span>, R, _add+addv[o]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> _nmin, _nowmin;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">qnmin</span><span class="params">(<span class="keyword">int</span> o, <span class="keyword">int</span> L, <span class="keyword">int</span> R, <span class="keyword">int</span> _add=<span class="number">0</span>)</span> </span>&#123;</div><div class="line">		<span class="keyword">if</span>(setv[o] != INF) &#123;</div><div class="line">			<span class="keyword">int</span> tmp = min(R, oR) - max(L, oL) + <span class="number">1</span>;</div><div class="line">			<span class="keyword">if</span>(_nowmin == setv[o]+_add+addv[o]) _nmin += tmp;</div><div class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(_nowmin &gt; setv[o]+_add+addv[o]) &#123; _nowmin = setv[o]+_add+addv[o]; _nmin = tmp; &#125;</div><div class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(L&gt;=oL &amp;&amp; R&lt;=oR) &#123;</div><div class="line">			<span class="keyword">if</span>(_nowmin == minv[o]+_add) _nmin += nmin[o];</div><div class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(_nowmin &gt; minv[o]+_add) &#123; _nowmin = minv[o]+_add; _nmin = nmin[o]; &#125;</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			<span class="keyword">int</span> lc=o*<span class="number">2</span>, rc=o*<span class="number">2</span>+<span class="number">1</span>;</div><div class="line">			<span class="keyword">int</span> M = L + (R-L)/<span class="number">2</span>;</div><div class="line">			<span class="keyword">if</span>(M &gt;= oL) qnmin(lc, L, M, _add+addv[o]);</div><div class="line">			<span class="keyword">if</span>(M &lt; oR) qnmin(rc, M+<span class="number">1</span>, R, _add+addv[o]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">execute_command</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">char</span> buf[<span class="number">20</span>];</div><div class="line"><span class="comment">//		printf("Reading(buf)...");</span></div><div class="line">		<span class="built_in">fscanf</span>(fin, <span class="string">"%s"</span>, buf);</div><div class="line"><span class="comment">//		printf(" buf=%s\n", buf);</span></div><div class="line">		<span class="keyword">int</span> op = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i++) <span class="keyword">if</span>(<span class="built_in">strcmp</span>(cmds[i], buf) == <span class="number">0</span>) &#123; op = i; <span class="keyword">break</span>;&#125;</div><div class="line">		<span class="keyword">int</span> l, r, a;</div><div class="line">		<span class="keyword">switch</span>(op) &#123;</div><div class="line">			<span class="keyword">case</span> <span class="number">0</span>:</div><div class="line"><span class="comment">//				fscanf(fin, "%d%d%d", &amp;l, &amp;r, &amp;a);</span></div><div class="line">				l = Q_read(); r = Q_read(); a = Q_read();</div><div class="line">				</div><div class="line">				oL = l; oR = r; av = a;</div><div class="line"><span class="comment">//				fprintf(fout, "add(), oL=%d, oR=%d, av=%d\n", oL, oR, av);</span></div><div class="line">				add(<span class="number">1</span>, <span class="number">1</span>, n);<span class="comment">//从A[oL]到A[oR]每个红包钱数加a</span></div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">case</span> <span class="number">1</span>:</div><div class="line"><span class="comment">//				fscanf(fin, "%d%d%d", &amp;l, &amp;r, &amp;a);</span></div><div class="line">				l = Q_read(); r = Q_read(); a = Q_read();</div><div class="line">				</div><div class="line">				oL = l; oR = r; sv = a;</div><div class="line"><span class="comment">//				fprintf(fout, "set, oL=%d, oR=%d\n", oL, oR);</span></div><div class="line">				<span class="built_in">set</span>(<span class="number">1</span>, <span class="number">1</span>, n);<span class="comment">//从A[oL]到A[oR]每个红包钱数变为a</span></div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">case</span> <span class="number">2</span>:</div><div class="line"><span class="comment">//				fscanf(fin, "%d%d%d", &amp;l, &amp;r, &amp;a);</span></div><div class="line">				l = Q_read(); r = Q_read(); a = Q_read();</div><div class="line">				</div><div class="line">				soL = l; soR = r; smaxv = a;</div><div class="line">				svinfo.clear();</div><div class="line">				setmax(<span class="number">1</span>, <span class="number">1</span>, n);<span class="comment">//从A[oL]到A[oR]每个红包钱数变为max(A[i],a)</span></div><div class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; svinfo.size(); i++) &#123;</div><div class="line">					sd &amp;x = svinfo[i];</div><div class="line">					oL = x.L; oR = x.R; sv = x.sv;</div><div class="line">					<span class="built_in">set</span>(<span class="number">1</span>, <span class="number">1</span>, n);</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">case</span> <span class="number">3</span>:</div><div class="line"><span class="comment">//				fscanf(fin, "%d%d%d", &amp;l, &amp;r, &amp;a);</span></div><div class="line">				l = Q_read(); r = Q_read(); a = Q_read();</div><div class="line">				</div><div class="line">				soL = l; soR = r; sminv = a;</div><div class="line">				svinfo.clear();</div><div class="line">				setmin(<span class="number">1</span>, <span class="number">1</span>, n);<span class="comment">//从A[oL]到A[oR]每个红包钱数变为min(A[i],a)</span></div><div class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; svinfo.size(); i++) &#123;</div><div class="line">					sd &amp;x = svinfo[i];</div><div class="line">					oL = x.L; oR = x.R; sv = x.sv;</div><div class="line">					<span class="built_in">set</span>(<span class="number">1</span>, <span class="number">1</span>, n);</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">case</span> <span class="number">4</span>:</div><div class="line"><span class="comment">//				fscanf(fin, "%d%d", &amp;l, &amp;r);</span></div><div class="line">				l = Q_read(); r = Q_read();</div><div class="line">				</div><div class="line">				oL = l; oR = r;</div><div class="line"><span class="comment">//				fprintf(fout, "qsum(), oL=%d, oR=%d\n", oL, oR);</span></div><div class="line">				_sum = <span class="number">0</span>;</div><div class="line">				qsum(<span class="number">1</span>, <span class="number">1</span>, n);<span class="comment">//求从A[oL]到A[oR]每个红包钱数和</span></div><div class="line">				<span class="built_in">fprintf</span>(fout, <span class="string">"%d\n"</span>, _sum);</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">case</span> <span class="number">5</span>:</div><div class="line"><span class="comment">//				fscanf(fin, "%d%d", &amp;l, &amp;r);</span></div><div class="line">				l = Q_read(); r = Q_read();</div><div class="line">				</div><div class="line">				oL = l; oR = r;</div><div class="line">				_max = -INF;</div><div class="line">				qmax(<span class="number">1</span>, <span class="number">1</span>, n);<span class="comment">//从A[oL]到A[oR]每个红包钱数的最大值</span></div><div class="line">				<span class="built_in">fprintf</span>(fout, <span class="string">"%d\n"</span>, _max);</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">case</span> <span class="number">6</span>:</div><div class="line"><span class="comment">//				fscanf(fin, "%d%d", &amp;l, &amp;r);</span></div><div class="line">				l = Q_read(); r = Q_read();</div><div class="line">				</div><div class="line">				oL = l; oR = r;</div><div class="line">				_min = INF;</div><div class="line">				qmin(<span class="number">1</span>, <span class="number">1</span>, n);<span class="comment">//从A[oL]到A[oR]每个红包钱数的最小值</span></div><div class="line">				<span class="built_in">fprintf</span>(fout, <span class="string">"%d\n"</span>, _min);</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">case</span> <span class="number">7</span>:</div><div class="line"><span class="comment">//				fscanf(fin, "%d%d", &amp;l, &amp;r);</span></div><div class="line">				l = Q_read(); r = Q_read();</div><div class="line">				</div><div class="line">				oL = l; oR = r;</div><div class="line">				_nowmax = -INF; _nmax = <span class="number">0</span>;</div><div class="line">				qnmax(<span class="number">1</span>, <span class="number">1</span>, n);<span class="comment">//从A[oL]到A[oR]每个红包钱数的最大值的个数</span></div><div class="line">				<span class="built_in">fprintf</span>(fout, <span class="string">"%d\n"</span>, _nmax);</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">case</span> <span class="number">8</span>:</div><div class="line"><span class="comment">//				fscanf(fin, "%d%d", &amp;l, &amp;r);</span></div><div class="line">				l = Q_read(); r = Q_read();</div><div class="line">				</div><div class="line">				oL = l; oR = r;</div><div class="line">				_nowmin = INF; _nmin = <span class="number">0</span>;</div><div class="line">				qnmin(<span class="number">1</span>, <span class="number">1</span>, n);<span class="comment">//从A[oL]到A[oR]每个红包钱数的最小值的个数</span></div><div class="line">				<span class="built_in">fprintf</span>(fout, <span class="string">"%d\n"</span>, _nmin);</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="comment">/*</span></div><div class="line">		printf("op=%s, l=%d, r=%d, a=%d\n", buf, l, r, a);</div><div class="line">		for(int i = 1; i &lt;= n; i++) &#123;</div><div class="line">			_sum = 0;</div><div class="line">			oL = oR = i;</div><div class="line">			qsum(1, 1, n);</div><div class="line">			printf("%d ", _sum);</div><div class="line">		&#125;</div><div class="line">		printf("\n");</div><div class="line">		*/</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	fin = fopen(<span class="string">"redbag.in"</span>, <span class="string">"r"</span>);</div><div class="line">	fout = fopen(<span class="string">"redbag.out"</span>, <span class="string">"w"</span>);</div><div class="line"><span class="comment">//	fout = stdout;</span></div><div class="line"><span class="comment">//	printf("Reading(n)..."); </span></div><div class="line"></div><div class="line"><span class="comment">//	fscanf(fin, "%d", &amp;n);</span></div><div class="line">	n = Q_read();</div><div class="line">	</div><div class="line"><span class="comment">//	printf(" n=%d\n", n); </span></div><div class="line"><span class="comment">//	printf("Reading(A[])..."); </span></div><div class="line"></div><div class="line"><span class="comment">//	for(int i = 1; i &lt;= n; i++) fscanf(fin, "%d", &amp;A[i]);</span></div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) A[i] = Q_read();</div><div class="line">	</div><div class="line"><span class="comment">//	printf("A: ");</span></div><div class="line"><span class="comment">//	for(int i = 1; i &lt;= n; i++) printf("%d ", A[i]);</span></div><div class="line"><span class="comment">//	printf("\n");</span></div><div class="line">	SEG *D = <span class="keyword">new</span> SEG(n);</div><div class="line">	</div><div class="line"><span class="comment">//	fscanf(fin, "%d", &amp;m);</span></div><div class="line">	m = Q_read();</div><div class="line">	</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) D-&gt;execute_command();</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2016/11/03/hello-world/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Tabing's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        897309345@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/" target="_self">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">4</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="关于">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">4</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/Tabing010102" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.png);">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+        <a href="http://space.bilibili.com/11300399/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-bilibili.png);">
+                <span class="visuallyhidden">Bilibili</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;Tabing
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+<script src="/js/lazyload.min.js"></script>
+<script src="/js/js.min.js"></script>
+<script src="/js/nprogress.js"></script>
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Swiftye -->
+
+
+<!-- Local Search-->
+
+    <script>
+    var searchFunc = function(path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: 'xml',
+            success: function( xmlResponse ) {
+                // get the contents from search data
+                var datas = $( 'entry', xmlResponse ).map(function() {
+                    return {
+                        title: $( 'title', this ).text(),
+                        content: $('content',this).text(),
+                        url: $( 'url' , this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function() {
+                    var str='<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = '';
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function(data) {
+                        var isMatch = true;
+                        var content_index = [];
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g,'').toLowerCase();
+                        var data_url = data.url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if(data_title !== '' && data_content !== '') {
+                            keywords.forEach(function(keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if( index_title < 0 && index_content < 0 ) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += '<li><a href="'+ data_url +'" class="search-result-title" target="_blank">'+ data_title;
+                            var content = data.content.trim().replace(/<[^>]+>/g, '');
+                            if (first_occur >= 0) {
+                                // cut out characters
+                                var start = first_occur - 6;
+                                var end = first_occur + 6;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 10;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, 'gi');
+                                    match_content = match_content.replace(regS, '<em class="search-keyword">'+keyword+'</em>');
+                                })
+                                str += '<p class="search-result">' + match_content + '...</p>' +'</a>';
+                            }
+                        }
+                    });
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    }
+</script>
+
+
+    <script>
+        var inputArea = document.querySelector('#search');
+        var getSearchFile = function() {
+            var path = 'search.xml';
+            searchFunc(path, 'search', 'local-search-result');
+        }
+
+        if(inputArea) {
+            inputArea.onfocus = function() {
+                getSearchFile();
+            }
+        }
+    </script>
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+
+                </main>
+            </div>
+        </body>
+    
+</html>
